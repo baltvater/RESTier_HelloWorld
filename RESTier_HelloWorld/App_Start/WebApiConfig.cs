@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Microsoft.Restier.Providers.EntityFramework;
+using Microsoft.Restier.Publishers.OData;
+using Microsoft.Restier.Publishers.OData.Batch;
+using RESTier_HelloWorld.Models;
 
 namespace RESTier_HelloWorld
 {
     public static class WebApiConfig
     {
-        public static void Register(HttpConfiguration config)
+        public static async void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            await config.MapRestierRoute<EntityFrameworkApi<AdventureWorksLT>>(
+                "AdventureWorksLT",
+                "api/AdventureWorksLT",
+                new RestierBatchHandler(GlobalConfiguration.DefaultServer));
         }
     }
 }
