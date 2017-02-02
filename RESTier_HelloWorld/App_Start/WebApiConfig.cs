@@ -14,6 +14,11 @@ namespace RESTier_HelloWorld
                 "AdventureWorksLT",
                 "api/AdventureWorksLT",
                 new RestierBatchHandler(GlobalConfiguration.DefaultServer));
+
+            //await config.MapRestierRoute<AdventureWorksApi>(
+            //    "AdventureWorksLT",
+            //    "api/AdventureWorksLT",
+            //    new RestierBatchHandler(GlobalConfiguration.DefaultServer));
         }
     }
 }

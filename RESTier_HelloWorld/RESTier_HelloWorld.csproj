@@ -136,6 +136,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AdventureWorksApi.cs" />
     <Compile Include="Models\AdventureWorksLT.cs" />
     <Compile Include="Models\BuildVersion.cs" />
     <Compile Include="Models\Customer.cs" />
